@@ -7,7 +7,7 @@
 body {
   background-color: #222;
 }
-.weatherForm {
+.weatherApp{
     width:90%;
     max-width: width 470px;
     background: linear-gradient(135deg,#00feba,#5b548a);
@@ -54,14 +54,6 @@ body {
   top: 1px;
   
   
-}
-#struggled{
-  height: 18px;
-  margin-left: 10px;
-  position: relative;
-  top: 1px;
-  margin-top:500px;
-
 }
 
 .weather-icon{
