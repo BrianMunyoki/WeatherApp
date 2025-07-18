@@ -46,9 +46,6 @@ This project uses the free OpenWeatherMap service. You need an API key to make A
 2. Copy your personal API key from your account
 3. Open the `index.js` file and replace the existing API key with your own:
 
-```js
-const apiKey = "your_api_key_here";
-```
 ## Project Structure
 
 ```
