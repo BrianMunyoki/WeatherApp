@@ -59,12 +59,6 @@ weather-app/
 ├── index.js # JavaScript logic and API integration
 └── images/ # Folder containing weather and UI icons
 ```
-## To Do
-
-- [ ] Add weather icons based on current weather conditions  
-- [ ] Make layout responsive for mobile and tablet devices  
-- [ ] Display extra weather details (e.g., pressure, visibility, sunrise/sunset)  
-
 ## Author
 
 Brian Munyoki
