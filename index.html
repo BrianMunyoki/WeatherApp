@@ -10,26 +10,25 @@
   <h1>Brian's weather app 🌦️</h1>
   <div class="search">
     <form>
-      <input type="text" placeholder="city name"/>
-      <button type="submit">
-      check weather <img src="images/search.png" alt="search"/>
+      <input class="searchInput" type="text" placeholder="city name"/>
+      <button class="searchButton" type="submit">check weather <img src="images/search.png" alt="search"/>
       </button>
     </form>      
   </div>
-  <div class="weather">
-    <img src="images/rain.png" alt="weather icon"/>
-    <h1>22°C</h1>
-    <h2>New York</h2>
+  <div class="temp">
+    <img class="weather-icon"src="images/rain.png" alt="weather icon"/>
+    <h1 class="temperature">22°C</h1>
+    <h2 class="city-name">New York</h2>
   </div>
   <div class="humidity">
-    <img src="images/humidity.png" alt="humidity icon"/>
-    <p>50%</p>
-    <p>Humidity</p>
+    <img class="weather-icon"src="images/humidity.png" alt="humidity icon"/>
+    <p class="humidity-one">50%</p>
+    <p class="humidity-name">Humidity</p>
   </div>
   <div class="wind">
-    <img src="images/wind.png" alt="wind icon"/>
-    <p>15 km/h</p>
-    <p>Wind Speed</p>
+    <img class="weather-icon" src="images/wind.png" alt="wind icon"/>
+    <p class="windspeed">15 km/h</p>
+    <p class="class-name">Wind Speed</p>
   </div>
   <script src="index.js"></script>
 </body>
