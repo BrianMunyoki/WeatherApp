@@ -1,75 +1,86 @@
-body {
-  background-color: #222;
-}
-.weatherApp{
-    width:90%;
-    max-width: width 470px;
-    background: linear-gradient(135deg,#00feba,#5b548a);
-    color:#fff;
-    margin:100px auto 0;
-    border-radius: 20px;
-    padding:40px 35px;
-    text-align: center;
-}
-.search{
+body.weatherApp {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  margin: 0;
+  padding: 20px;
   text-align: center;
-  align-items:center;
-  justify-content: space-between;
-}
-.searchInput{
-  border:0;
-  outline:0;
-  background:#ebfffc;
-  color:10px 25px;
-  padding: 10px 45px;
-  height:40px;
-  border-radius:30px;
-  flex:30;
-  margin-right:50px;
-  font-size: 18px;
-}
-.searchButton{
-  border:0;
-  outline:0;
-  background:#ebfffc;
-  color:10px 25px;
-  padding: 10px 45px;
-  height:40px;
-  border-radius:30px;
-  flex:30;
-  margin-right:30px;
-  font-size: 18px;
- 
+  color: #333;
 }
 
-.searchButton img{
-  height: 18px;
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #0077b6;
+}
+
+.search {
+  margin-bottom: 30px;
+}
+
+.searchInput {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.searchButton {
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  background-color: #0077b6;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
   margin-left: 10px;
-  position: relative;
-  top: 1px;
 }
 
-.temp{
-  float:center;
-  align-items:center;
-  justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 50px;
+.searchButton img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-left: 5px;
 }
 
-.humidity{
-  float:right;
-  align-items:center;
-  justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 50px;
+.weather-icon,
+.soil-temp-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
 }
 
-.wind{
-  float:left;
-  align-items:center;
-  justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 50px;
+.soil-temp {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
 
+.temperature {
+  font-size: 2em;
+  margin: 10px 0;
+  color: #0077b6;
+}
+
+.city-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 1em;
+  color: #0077b6;
+}
+
+.weather-section {
+  margin: 20px auto;
+  width: 150px;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Weather App</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="weatherApp">
   <h1>Brian's weather app 🌦️</h1>
   <div class="search">
     <form>
-      <input class="searchInput" type="text" placeholder="city name"/>
-      <button class="searchButton" type="submit">check weather <img src="images/search.png" alt="search"/>
+      <input class="searchInput" type="text" placeholder="city name" />
+      <button class="searchButton" type="submit">
+        check weather <img src="images/search.png" alt="search" />
       </button>
-    </form>      
+    </form>
   </div>
+
   <div class="temp">
-    <img class="weather-icon"src="images/rain.png" alt="weather icon"/>
+    <img class="weather-icon" src="images/cloudy.png" alt="weather icon" />
     <h1 class="temperature">22°C</h1>
     <h2 class="city-name">New York</h2>
   </div>
+
   <div class="humidity">
-    <img class="weather-icon"src="images/humidity.png" alt="humidity icon"/>
+    <img class="weather-icon" src="images/humidity.png" alt="humidity icon" />
     <p class="humidity-one">50%</p>
     <p class="humidity-name">Humidity</p>
   </div>
+
   <div class="wind">
-    <img class="weather-icon" src="images/wind.png" alt="wind icon"/>
+    <img class="weather-icon" src="images/wind.png" alt="wind icon" />
     <p class="windspeed">15 km/h</p>
     <p class="class-name">Wind Speed</p>
   </div>
+
+  <div class="rain">
+    <img class="weather-icon" src="images/rain.png" alt="rain icon" />
+    <p class="rain-value">0 mm</p>
+    <p class="class-name">Rain</p>
+  </div>
+
+  <div class="soil">
+    <img class="weather-icon soil-temp-icon" src="images/plant.png" alt="soil icon" />
+    <p class="soil-temp">0°C</p>
+    <p class="class-name">Soil Temp</p>
+  </div>
+
   <script src="index.js"></script>
 </body>
 </html>
