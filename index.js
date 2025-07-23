@@ -19,24 +19,33 @@ document.addEventListener("DOMContentLoaded", () => { // This is the first event
     if (city === "") { // If a user clicks to check weather when the search is empty, show an alert
       alert("Please enter a city name.");
       return;
-    }
-
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=humidity,wind,,rain,soil Temperature`; // This is the API URL and we have declared a variable to store it
-    const latitude=data.results[0].latitude;
-    const longitude=data.results0[0].longitude;
+    } 
     fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`)
     .then(response=>{
       
       if(response.ok){
-        return response.json();
         console.log(response)
+        return response.json();
+        
       }else{
         alert("something went wrong")
         throw new Error("Bad Status")
       }
     })
     .then(data=>{
-      console.log(data)
+      if(!data.results || data.results.length===0){
+        alert("city not found!")
+        throw new Error("no results found")
+      }
+    const latitude=data.results[0].latitude;
+    const longitude=data.results0[0].longitude;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=wind_speed_10m,relative_humidity_2m,rain,soil_temperature_0cm`;
+
+    console.log(response)
     })
+    .catch(error => { 
+      console.error("Something went wrong:", error);
+      alert("Something went wrong. Please try again.");
   })
+})
 })
