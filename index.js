@@ -36,11 +36,17 @@ document.addEventListener("DOMContentLoaded", () => { // This is the first event
           throw new Error("Failed to fetch data");
         }
       })
-    
-      })
-      .catch(error => {
-        console.error("Error:", error); // Log any errors
-      });
+fetch("https://your-api-url.com")
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(city => {
+      console.log("Temp:", city.temp);
+      console.log("Humidity:", city.humidity);
+      console.log("Rain:", city.rain);
+      console.log("Wind speed:", city.windSpeed);
+      console.log(`Soil Temp: ${city.soilTemperature}`);
+    });
+  })
+  .catch(error => {
+    console.error("Error:", error);
   });
-
-
