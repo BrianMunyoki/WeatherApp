@@ -8,3 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const humidity = document.querySelector(".humidity-one");
   const soilTemp = document.querySelector(".soil-temp");
   const rainElement = document.querySelector(".rain-value");
+   // Create a button that allows user to refresh and search again
+  const refreshButton = document.createElement("button");
+  refreshButton.textContent = "Click here to search another city";
+  refreshButton.classList.add("resetButton");
+  refreshButton.style.display = "none"; // Hide it at first
+  document.body.appendChild(refreshButton);
