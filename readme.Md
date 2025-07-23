@@ -10,15 +10,17 @@ A simple weather app built with HTML, CSS, and JavaScript. It fetches current we
   - City name
   - Humidity
   - Wind speed
+  -soil temperature
+  -rain in mm
 - Error handling for invalid city names
 - Refresh button to search another city
 
 ## Tech Stack
 
 - HTML5  
-- CSS3  
-- JavaScript (ES6)  
-- OpenWeatherMap API  
+- CSS  
+- JavaScript 
+- Open-Meteo API 
 
 ## Getting Started
 
@@ -36,15 +38,9 @@ Open the `index.html` file in any modern web browser.
 
 Type the name of a city into the input field and click the **Check Weather** button to view the current weather data.
 
-## API Key Setup
+## API 
 
-This project uses the free OpenWeatherMap service. You need an API key to make API requests.
-
-### Steps to set up your API key:
-
-1. Sign up at [https://openweathermap.org/appid](https://openweathermap.org/appid)
-2. Copy your personal API key from your account
-3. Open the `index.js` file and replace the existing API key with your own:
+This project uses the free Open-Meteo API. This is a public API, you do not need any key.
 
 ## Project Structure
 
