@@ -1,16 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => { // This is the first event listener that allows the DOM to run
-
-  const apiKey = "8ed75f33e8c79dc7ae27a36fff59b1b8"; // This is the API that allows me to access the weather app
-
   const searchButton = document.querySelector(".searchButton"); // Here I have selected the HTML element then declared a variable
   const searchInput = document.querySelector(".searchInput"); // Here I have selected the HTML element (class searchInput) then declared a variable
-
   const refreshButton = document.createElement("button"); // Here I have created a new button element
   refreshButton.textContent = "Click here to search another city"; // This is the button name to refresh
   refreshButton.classList.add("resetButton"); // I have now styled the new element
   refreshButton.style.display = "none"; // Hide the button initially
   document.body.appendChild(refreshButton); // Here I have appended the element button created to the body
-
   refreshButton.addEventListener("click", () => { // This is the event listener to the refresh button
     location.reload(); // Tells the browser to reload the current page just like if the user hit the refresh button
   });
@@ -36,8 +31,6 @@ document.addEventListener("DOMContentLoaded", () => { // This is the first event
           throw new Error("Failed to fetch data");
         }
       })
-fetch("https://your-api-url.com")
-  .then(response => response.json())
   .then(data => {
     data.forEach(city => {
       console.log("Temp:", city.temp);
@@ -49,4 +42,4 @@ fetch("https://your-api-url.com")
   })
   .catch(error => {
     console.error("Error:", error);
-  });
+  })
