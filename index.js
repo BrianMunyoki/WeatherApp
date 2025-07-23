@@ -53,6 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {// Get references to import
               alert("Could not match current hour in forecast.");
               return;
             }
+            cityName.textContent = city.charAt(0).toUpperCase() + city.slice(1);
+
+            // Update UI values
+            temperature.textContent = `${hourly.temperature_2m[timeIndex]}°C`;
+            humidity.textContent = `${hourly.relative_humidity_2m[timeIndex]}%`;
+            windspeed.textContent = `${hourly.wind_speed_10m[timeIndex]} km/h`;
             let rainValue = 0;//check up to 6 hours ahead for rain
             for (let i = timeIndex; i < timeIndex + 6 && i < hourly.rain.length; i++) {
               if (hourly.rain[i] > 0) {
@@ -68,3 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {// Get references to import
             if (soilTemp) {// Soil temperature update
               soilTemp.textContent = `${hourly.soil_temperature_0cm[timeIndex]}°C`;
             }
+            refreshButton.style.display = "block";
+          })
+          .catch(error => {
+            console.error("Weather fetch error:", error);
+            alert("Could not load weather data.");
+          });
+      })
+      .catch(error => {
+        console.error("City fetch error:", error);
+        alert("City lookup failed.");
+      });
+  });
+});
