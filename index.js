@@ -25,34 +25,22 @@ document.addEventListener("DOMContentLoaded", () => { // This is the first event
       return;
     }
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`; // This is the API URL and we have declared a variable to store it
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,wind_speed_10m,relative_humidity_2m,rain,soil_temperature_0cm`; // This is the API URL and we have declared a variable to store it
 
     fetch(url) // Here we fetch the URL for the API
       .then(response => { // Here we are creating a function on what to do after we get the data
-        if (response.ok) {
-          console.log("Success");
+        if(!response.ok) {
           return response.json(); // Convert the response to JSON
         } else {
-          console.log("Not successful");
           alert("Invalid city name");
           throw new Error("Failed to fetch data");
         }
       })
-      .then(data => { // Here is where we manipulate our data from the API based on the user's request
-        console.log(data);
-
-        document.querySelector(".temperature").textContent = `${data.main.temp}°C`; // Temperature
-        document.querySelector(".city-name").textContent = data.name; // City name
-        document.querySelector(".humidity-one").textContent = `Humidity: ${data.main.humidity}%`; // Humidity
-        document.querySelector(".windspeed").textContent = `Wind: ${data.wind.speed} km/h`; // Wind speed
-
-        const iconCode = data.weather[0].icon;
-
-        refreshButton.style.display = "block"; // Show the refresh button after successful fetch
+    
       })
       .catch(error => {
         console.error("Error:", error); // Log any errors
       });
   });
 
-});
+
