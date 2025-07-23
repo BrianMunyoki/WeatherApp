@@ -53,3 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {// Get references to import
               alert("Could not match current hour in forecast.");
               return;
             }
+            let rainValue = 0;//check up to 6 hours ahead for rain
+            for (let i = timeIndex; i < timeIndex + 6 && i < hourly.rain.length; i++) {
+              if (hourly.rain[i] > 0) {
+                rainValue = hourly.rain[i];
+                break;
+              }
+            }
+            if (rainValue > 0) { // Show rain result clearly
+              rainElement.textContent = `${rainValue} mm expected`;
+            } else {
+              rainElement.textContent = "No rain expected";
+            }
+            if (soilTemp) {// Soil temperature update
+              soilTemp.textContent = `${hourly.soil_temperature_0cm[timeIndex]}°C`;
+            }
