@@ -10,8 +10,8 @@ A simple weather app built with HTML, CSS, and JavaScript. It fetches current we
   - City name
   - Humidity
   - Wind speed
-  -soil temperature
-  -rain in mm
+  -Soil temperature
+  -Rain in mm
 - Error handling for invalid city names
 - Refresh button to search another city
 
