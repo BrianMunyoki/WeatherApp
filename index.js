@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {// Get references to import
             // Update UI values
             temperature.textContent = `${hourly.temperature_2m[timeIndex]}°C`;
             humidity.textContent = `${hourly.relative_humidity_2m[timeIndex]}%`;
-            windspeed.textContent = `${hourly.wind_speed_10m[timeIndex]} km/h`;
+            
             let rainValue = 0;//check up to 6 hours ahead for rain
             for (let i = timeIndex; i < timeIndex + 6 && i < hourly.rain.length; i++) {
               if (hourly.rain[i] > 0) {
