@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => { // This is the first event listener that allows the DOM to run
-  const searchButton = document.querySelector(".searchButton"); // Here I have selected the HTML element then declared a variable
+   const searchButton = document.querySelector(".searchButton"); // Here I have selected the HTML element then declared a variable
   const searchInput = document.querySelector(".searchInput"); // Here I have selected the HTML element (class searchInput) then declared a variable
   const refreshButton = document.createElement("button"); // Here I have created a new button element
   refreshButton.textContent = "Click here to search another city"; // This is the button name to refresh
@@ -15,31 +15,28 @@ document.addEventListener("DOMContentLoaded", () => { // This is the first event
 
     const city = searchInput.value.trim(); // This removes unnecessary spaces in the user's input
 
+    
     if (city === "") { // If a user clicks to check weather when the search is empty, show an alert
       alert("Please enter a city name.");
       return;
     }
 
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,wind_speed_10m,relative_humidity_2m,rain,soil_temperature_0cm`; // This is the API URL and we have declared a variable to store it
-
-    fetch(url) // Here we fetch the URL for the API
-      .then(response => { // Here we are creating a function on what to do after we get the data
-        if(!response.ok) {
-          return response.json(); // Convert the response to JSON
-        } else {
-          alert("Invalid city name");
-          throw new Error("Failed to fetch data");
-        }
-      })
-  .then(data => {
-    data.forEach(city => {
-      console.log("Temp:", city.temp);
-      console.log("Humidity:", city.humidity);
-      console.log("Rain:", city.rain);
-      console.log("Wind speed:", city.windSpeed);
-      console.log(`Soil Temp: ${city.soilTemperature}`);
-    });
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=humidity,wind,,rain,soil Temperature`; // This is the API URL and we have declared a variable to store it
+    const latitude=data.results[0].latitude;
+    const longitude=data.results0[0].longitude;
+    fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`)
+    .then(response=>{
+      
+      if(response.ok){
+        return response.json();
+        console.log(response)
+      }else{
+        alert("something went wrong")
+        throw new Error("Bad Status")
+      }
+    })
+    .then(data=>{
+      console.log(data)
+    })
   })
-  .catch(error => {
-    console.error("Error:", error);
-  })
+})
